@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<style>
+    body {
+    background-color: #EBF5FB  ;
+    text-align: center;
+    font-family: 'Lora';
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bolder;
+    }
+    Button {
+        background-color: #4682B4; 
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin:10px;
+}
+</style>
+
+<body>
+    <form method='post' action=''>
+        {% csrf_token %}
+
+        <script>
+            {% if error %}
+                alert('{{error}}');
+            {% endif %}
+        </script>
+        <br><br>
+        <h1>PATIENT REGISTRATION PAGE</h1>
+         <br>
+        
+        {{form.as_p}}
+
+        <button type = 'submit', name = 'Complete'> Complete </button>
+        
+
+    </form>
+</body>
+</html>

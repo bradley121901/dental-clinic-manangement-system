@@ -1,0 +1,77 @@
+
+<style>
+    body {
+    background-color: #EBF5FB  ;
+    text-align: center;
+    font-family: 'Lora';
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bolder;
+    }
+    Button {
+        background-color: #4682B4; 
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin:10px;
+    }
+    tr:hover {background-color: #A9A9A9;}
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    th {
+        background-color: #808080;
+         color: white;
+    }
+
+</style>
+
+<html>
+    <br><br>
+    <head>
+        <h1> Upcoming Appointment Dates </h1>
+    </head>
+    <br><br>
+    <body>
+        <table border = 1 width = 100%>
+            <tr>
+                <th> Appointment ID </th>
+                <th>Appointment Date</th>
+                <th>Appointment Start Time</th>
+                <th>Appointment End Time (min)</th>
+                <th>Dentist First Name</th>
+                <th>Dentist Last Name</th>
+                <th>Appointment Type</th>
+            </tr>
+            {% for elem in appointments %}
+                <tr>
+                    <th> {{elem.id}} </th>
+                    <th> {{elem.date}} </th>
+                    <th> {{elem.startTime}} </th>
+                    <th> {{elem.endTime}} </th>
+                    <th> {{elem.firstName}} </th>
+                    <th> {{elem.lastName}} </th>
+                    <th> {{elem.type}} </th>
+                </tr>>    
+             {% endfor %}    
+        </table>
+
+
+        <br><br>
+        <h1>Cancel Appointment by Appointment ID:   </h1>     
+        <form method='post' action=''>
+            {% csrf_token %}
+            {{form.as_p}}
+            <Button type='submit' name='Cancel Button'>Cancel Button</Button>            
+        </form> 
+        <form method='post' action=''>
+            {% csrf_token %}
+            <Button type='submit' name='Back Button'>Back Button</Button>    
+        </form>
+    </body>
+</html>

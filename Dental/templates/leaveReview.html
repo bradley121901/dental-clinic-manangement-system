@@ -1,0 +1,41 @@
+<style>
+    body {
+    background-color: #EBF5FB  ;
+    text-align: center;
+    font-family: 'Lora';
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bolder;
+    }
+    Button {
+        background-color: #4682B4; 
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin:10px;
+}
+</style>
+
+<html>
+    <br><br>
+    <h1>Leave a Review</h1>
+    <body>
+    <script>
+        {% if error %}
+            alert('{{error}}');
+        {% endif %}
+    </script>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{review.as_p}}
+        <Button type = 'submit', name = 'save'>Leave Review</Button>
+    </form>
+    </body>
+</html>

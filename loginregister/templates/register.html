@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<style>
+    body {
+    background-color: #EBF5FB  ;
+    text-align: center;
+    font-family: 'Lora';
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bolder;
+    }
+    Button {
+        background-color: #4682B4; 
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin:10px;
+}
+</style>
+
+<body>
+    <form method='post' action=''>
+        {% csrf_token %}
+        <br><br>
+        <h1>REGISTRATION FORM</h1>
+        <br>
+        
+        <label>Account Type</label>
+        <select name="account-type" id="acc-types">
+            <option value="Patient"> Patient </option>
+            <option value="Employee"> Employee</option>
+        </select>
+        <br><br>
+
+        <Button type='submit' name='Proceed'>Proceed</Button>
+    </form>
+</body>
+
+</html>

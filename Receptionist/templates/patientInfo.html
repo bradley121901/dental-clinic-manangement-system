@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <style>
+        body {
+        background-color: #EBF5FB  ;
+        text-align: center;
+        font-family: 'Lora';
+        }
+    
+        h1{
+            text-align: center;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-weight: bolder;
+        }
+        Button {
+            background-color: #4682B4; 
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin:10px;
+    }
+    </style>
+
+<head>
+    <h1>PATIENT INFORMATION</h1>
+</head>
+<body>
+    
+    <form method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <Button type='submit' name='save'>Save</Button>
+
+       
+    </form>
+</body>
+</html>

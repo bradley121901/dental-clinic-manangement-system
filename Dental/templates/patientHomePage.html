@@ -1,0 +1,49 @@
+<style>
+    body {
+    background-color: #EBF5FB  ;
+    text-align: center;
+    font-family: 'Lora';
+    }
+
+    h1{
+        text-align: center;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: bolder;
+    }
+    Button {
+        background-color: #4682B4; 
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin:10px;
+}
+</style>
+
+
+
+<br><br>
+<h1>PATIENT PAGE</h1>
+<br><br>
+<body>
+    {% if error %}
+    <form method='post' action=''>
+        {% csrf_token %}
+        <Button type='submit' name='Employee Page'>Employee Page</Button><br>
+    </form>
+    {% endif %}
+<form method='post' action=''>
+    {% csrf_token %}
+    <Button type='submit' name='Add Appointment'>Add Appointment</Button><br>
+    <Button type='submit' name='Cancel/View Upcoming Appointment'>Cancel/View Upcoming Appointment</Button><br>
+    <Button type='submit' name='View Records'>View Records</Button><br>
+    <Button type='submit' name='Leave a Review'>Leave a Review</Button><br>
+    <Button type='submit' name='View Invoices'>View Invoices</Button><br>
+</form>
+
+
+</body>
+
